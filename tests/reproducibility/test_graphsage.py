@@ -232,8 +232,7 @@ def test_nai(petersen_graph, shuffle):
     )
 
 
-# FIXME (#970): This test fails intermittently with shuffle=True
-@pytest.mark.parametrize("shuffle", [False])
+@pytest.mark.parametrize("shuffle", [True, False])
 def test_link_prediction(petersen_graph, shuffle):
     num_examples = 10
     edge_ids = np.random.choice(petersen_graph.nodes(), size=(num_examples, 2))
